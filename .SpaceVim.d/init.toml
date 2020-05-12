@@ -25,6 +25,10 @@
     enable_statusline_mode = false
     filetree_direction = "left"
     filemanager = "nerdtree"
+    enable_ycm = true
+    autocomplete_method = "ycm"
+    bootstrap_after = "myconfig#after"
+
 # Enable autocomplete layer
 [[layers]]
 name = 'autocomplete'
@@ -33,6 +37,7 @@ auto_completion_return_key_behavior = "smart"
 
 [[layers]]
 name = 'shell'
+# default_shell = "VimShell"
 default_position = 'bottom'
 default_height = 30
 
@@ -45,7 +50,7 @@ default_height = 30
       ''
   ]
 
-[[layers]]
+  [[layers]]
   name = "colorscheme"
 
 [[layers]]
@@ -57,3 +62,8 @@ default_height = 30
 [[layers]]
     name = 'core'
     filetree_show_hidden = true
+
+[[custom_plugins]]
+  name = "hashivim/vim-terraform"
+  merged = false
+
