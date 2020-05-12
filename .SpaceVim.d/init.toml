@@ -23,12 +23,13 @@
     buffer_index_type = 4
     enable_tabline_filetype_icon = true
     enable_statusline_mode = false
-
+    filetree_direction = "left"
+    filemanager = "nerdtree"
 # Enable autocomplete layer
 [[layers]]
 name = 'autocomplete'
-auto_completion_return_key_behavior = "complete"
-auto_completion_tab_key_behavior = "smart"
+auto_completion_return_key_behavior = "smart"
+# auto_completion_tab_key_behavior = "smart"
 
 [[layers]]
 name = 'shell'
@@ -47,3 +48,12 @@ default_height = 30
 [[layers]]
   name = "colorscheme"
 
+[[layers]]
+  name = "git"
+
+[[layers]]
+  name = "lang#sh"
+
+[[layers]]
+    name = 'core'
+    filetree_show_hidden = true
