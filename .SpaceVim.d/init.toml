@@ -25,9 +25,9 @@
     enable_statusline_mode = false
     filetree_direction = "left"
     filemanager = "nerdtree"
-    enable_ycm = true
-    autocomplete_method = "ycm"
-    bootstrap_after = "myconfig#after"
+    enable_ycm = false
+    autocomplete_method = "completor"
+    bootstrap_before = "custom_init#before"
 
 # Enable autocomplete layer
 [[layers]]
@@ -63,7 +63,9 @@ default_height = 30
     name = 'core'
     filetree_show_hidden = true
 
+[[layers]]
+  name = "lang#javascript"
+
 [[custom_plugins]]
   name = "hashivim/vim-terraform"
   merged = false
-
