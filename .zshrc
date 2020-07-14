@@ -1,8 +1,8 @@
 # If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
+export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/trauco/.oh-my-zsh"
+# export ZSH="/home/trauco/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -70,7 +70,7 @@ ZSH_THEME="rkj-repos"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(git zsh-autosuggestions)
 
-source $ZSH/oh-my-zsh.sh
+# source $ZSH/oh-my-zsh.sh
 
 # User configuration
 
@@ -97,7 +97,7 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source virtualenvwrapper.sh source /home/trauco/.zshrc
+# source virtualenvwrapper.sh source /home/trauco/.zshrc
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 export PATH=/usr/local/sbin:$PATH
@@ -198,12 +198,22 @@ source $ZSH/oh-my-zsh.sh
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-source ~/powerlevel10k/powerlevel10k.zsh-theme
+# source ~/powerlevel10k/powerlevel10k.zsh-theme
 POWERLEVEL9K_DISABLE_CONFIGURATION_WIZARD=true
 
-
+#####################################
 # Python Virtual Environment Indicator
 #
 plugins=(virtualenv)
-
 POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status virtualenv)
+###################################
+##################################
+# ZSH ignores insecure directories
+ZSH_DISABLE_COMPFIX="true"
+###################################
+
+# The next line updates PATH for the Google Cloud SDK.
+if [ -f '/Users/trauco/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/trauco/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+if [ -f '/Users/trauco/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/trauco/google-cloud-sdk/completion.zsh.inc'; fi
