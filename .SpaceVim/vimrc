@@ -1,41 +1,75 @@
-"=============================================================================
-" vimrc --- Entry file for vim
-" Copyright (c) 2016-2017 Shidong Wang & Contributors
-" Author: Shidong Wang < wsdjeg at 163.com >
-" URL: https://spacevim.org
-" License: GPLv3
-"=============================================================================
+#=============================================================================
+# dark_powered.toml --- dark powered configuration example for SpaceVim
+# Copyright (c) 2016-2017 Wang Shidong & Contributors
+# Author: Wang Shidong < wsdjeg at 163.com >
+# URL: https://spacevim.org
+# License: GPLv3
+#=============================================================================
 
-" Note: Skip initialization for vim-tiny or vim-small.
-if 1
-    let g:_spacevim_if_lua = 0
-    if has('lua')
-        if has('win16') || has('win32') || has('win64')
-            let s:plugin_dir = fnamemodify(expand('<sfile>'), ':h').'\lua'
-            let s:str = s:plugin_dir . '\?.lua;' . s:plugin_dir . '\?\init.lua;'
-        else
-            let s:plugin_dir = fnamemodify(expand('<sfile>'), ':h').'/lua'
-            let s:str = s:plugin_dir . '/?.lua;' . s:plugin_dir . '/?/init.lua;'
-        endif
-        silent! lua package.path=vim.eval("s:str") .. package.path
-        if empty(v:errmsg)
-            let g:_spacevim_if_lua = 1
-        endif
-    endif
-    execute 'source' fnamemodify(expand('<sfile>'), ':h').'/config/main.vim'
-endif
-"##############################################
-" CUSTOM MAPPINGS #############################
-" # Copy current line,2 delete content, and paste one line BELOW the original
-" starting line number
-:nmap - yyddp
-" # Copy current line,2 delete content, and paste one line ABOVE the original
-" starting line number
-:nmap _ yyddP
-" Converts selected word to uppercase from 'insert' mode as '<Ctrl> +u' hotkeys then 'escapes' into 'normal' mode that is switched to 'visual' for text selection and single word uppercasing. 
-:imap <c-u> <esc>vvgU<esc>
-" Capitalize a single word in normal mode with '<Ctrl + u)' hotkeys that upper case the current word by that goes from normal, to visual, and returns to normal modeline 
-":nmap <c-u> gU
+# All SpaceVim option below [option] section
+[options]
+    # set spacevim theme. by default colorscheme layer is not loaded,
+    # if you want to use more colorscheme, please load the colorscheme
+    # layer
+    colorscheme = "onedark"
+    colorscheme_bg = "dark"
+    # Disable guicolors in basic mode, many terminal do not support 24bit
+    # true colors
+    enable_guicolors = true
+    # Disable statusline separator, if you want to use other value, please
+    # install nerd fonts
+    statusline_separator = "arrow"
+    statusline_inactive_separator = "arrow"
+    buffer_index_type = 4
+    enable_tabline_filetype_icon = true
+    enable_statusline_mode = false
+    filetree_direction = "left"
+    filemanager = "nerdtree"
+    enable_ycm = false
+    autocomplete_method = "completor"
+    bootstrap_before = "custom_init#before"
 
-"##############################################
-"  #############################
+# Enable autocomplete layer
+[[layers]]
+name = 'autocomplete'
+auto_completion_return_key_behavior = "smart"
+# auto_completion_tab_key_behavior = "smart"
+
+[[layers]]
+name = 'shell'
+# default_shell = "VimShell"
+default_position = 'bottom'
+default_height = 30
+
+[[layers]]
+  name = "lang#python"
+  python_file_head = [
+      '#!/usr/bin/env python3',
+      '# -*- coding: utf-8 -*-',
+      '',
+      ''
+  ]
+
+  [[layers]]
+  name = "colorscheme"
+
+[[layers]]
+  name = "git"
+
+[[layers]]
+  name = "lang#sh"
+
+[[layers]]
+    name = 'core'
+    filetree_show_hidden = true
+
+[[layers]]
+  name = "lang#javascript"
+
+[[custom_plugins]]
+  name = "hashivim/vim-terraform"
+  merged = false
+
+  [[custom_plugins]]
+    name = "tpope/vim-surround"
+    merged = false 
