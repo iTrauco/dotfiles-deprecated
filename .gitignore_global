@@ -1,4 +1,4 @@
-# iTrauco's Global .gitignore #
+# iTrauco's .gitignore_global #
 ###############################
 
 ##############
@@ -8,15 +8,12 @@
 # Ubuntu 20.04 x86_64
 # RHEL 8.1 x86_64
 # Kali Linux 2020.1b x86_64
-##############
 
-
-######
-# USE #
-#######
+#########
+# USAGE #
+#########
 # 1. Place a copy if this at ~/.gitignore_global
 # 2. Open terminal and run `git config --global core.excludesfile ~/.gitignore_global`
-######
 
 ############
 # COMPILED #
@@ -27,7 +24,6 @@
 *.so
 *.pyc
 *.pyo
-############
 
 ############
 # PACKAGES #
@@ -41,13 +37,11 @@
 *.tar
 *.zip
 *.msi
-###########
 
-#####
+######
 # vi #
 ######
 *~
-######
 
 ###########
 # LOGS/DB #
@@ -56,7 +50,6 @@ log/
 *.log
 *.sql
 *.sqlite
-###########
 
 ########################
 # OPERATING SYSTEM(OS) #
@@ -67,9 +60,8 @@ log/
 .Spotlight-V100
 .Trashes
 .Thumbs.db
-########################
 
-#############
+##############
 # TEMP files #
 ##############
 *.bak
@@ -77,22 +69,22 @@ log/
 *.swo
 *~
 *#
-######
+
+#######
 # IDE #
 #######
 .vscode
 .idea
 .iml
 *.sublime-workspace
-####################
 
 ###########
 # JS/NODE #
-##########
+###########
 node_modules
 npm-debug.log
 
-#########
+##########
 # PYTHON #
 ##########
 .Python
@@ -111,6 +103,4 @@ venv/
 .terraform
 *.tfstate
 *.tfstate.backup
-# iTrauco's Global .gitignore #
-###############################
 
