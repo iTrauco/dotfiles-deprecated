@@ -24,7 +24,18 @@ if 1
     endif
     execute 'source' fnamemodify(expand('<sfile>'), ':h').'/config/main.vim'
 endif
-" vim:set et sw=2
+"##############################################
+" CUSTOM MAPPINGS #############################
+" # Copy current line,2 delete content, and paste one line BELOW the original
+" starting line number
 :nmap - yyddp
+" # Copy current line,2 delete content, and paste one line ABOVE the original
+" starting line number
 :nmap _ yyddP
+" Converts selected word to uppercase from 'insert' mode as '<Ctrl> +u' hotkeys then 'escapes' into 'normal' mode that is switched to 'visual' for text selection and single word uppercasing. 
+:imap <c-u> <esc>vvgU<esc>
+" Capitalize a single word in normal mode with '<Ctrl + u)' hotkeys that upper case the current word by that goes from normal, to visual, and returns to normal modeline 
+":nmap <c-u> gU
 
+"##############################################
+"  #############################
