@@ -69,3 +69,7 @@ default_height = 30
 [[custom_plugins]]
   name = "hashivim/vim-terraform"
   merged = false
+  
+  [[custom_plugins]]
+    name = "tpope/vim-surround"
+    merged = false
