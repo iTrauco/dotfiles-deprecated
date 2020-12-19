@@ -28,6 +28,8 @@
     enable_ycm = false
     autocomplete_method = "completor"
     bootstrap_before = "custom_init#before"
+    # enable / disable relative number in vim got code line numbers
+    relativenumber= false
 
 # Enable autocomplete layer
 [[layers]]
@@ -74,4 +76,3 @@ default_height = 30
   [[custom_plugins]]
     name = "tpope/vim-surround"
     merged = false
-
